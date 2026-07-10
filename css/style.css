@@ -18,9 +18,9 @@ img{
 .wrapper {
     background-color: #023047;
     width: 1200px;
-    height: 3400px;
     top: 0;
     margin: 0 auto;
+    overflow: auto; /* clearfix: makes wrapper expand to contain floated .header/.body */
 }
 .header{
     width: 15%;
