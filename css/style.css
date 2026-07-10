@@ -79,12 +79,24 @@ p{
 .inner-content{
     padding-left: 15px;
     margin-top: 10px;
+    overflow: auto; /* clearfix: forces each entry to start on its own line below the previous one */
 }
 
 .text-box{
     margin-top: 30px;
     width: 98%;
     
+}
+ol, ul{
+    /* The universal '*' selector above zeroes out padding on every element,
+       which strips the default ~40px left padding that <ol>/<ul> normally
+       reserve for their number/bullet markers. Without that space, the
+       marker box is too narrow for two-digit numbers (10, 11, 12...),
+       so the leading digit gets pushed outside the content box and
+       clipped by the parent's overflow: auto. Restoring left padding
+       here (with a little extra margin for safety) fixes it. */
+    padding-left: 45px;
+    list-style-position: outside;
 }
 li{
     margin-bottom: 15px;
